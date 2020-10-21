@@ -8,60 +8,60 @@ use PHPUnit\Framework\TestCase;
 
 class BerlinClockTest extends TestCase
 {
-    public function test_convertMinutes_given0_shouldReturnOOOO() {
-        $berlinClock = new BerlinClock();
 
-        $actual = $berlinClock->convertMinutes(0);
+    private $berlinClock;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->berlinClock = new BerlinClock();
+    }
+
+    public function test_convertMinutes_given0_shouldReturnOOOO() {
+        $actual = $this->actConvertMinutes(0);
 
         $this->assertEquals("OOOO",$actual);
     }
 
     public function test_convertMinutes_given1_shouldReturnYOOO() {
-        $berlinClock = new BerlinClock();
-
-        $actual = $berlinClock->convertMinutes(1);
+        $actual = $this->actConvertMinutes(1);
 
         $this->assertEquals("YOOO",$actual);
     }
 
     public function test_convertMinutes_given2_shouldReturnYYOO() {
-        $berlinClock = new BerlinClock();
-
-        $actual = $berlinClock->convertMinutes(2);
+        $actual = $this->actConvertMinutes(2);
 
         $this->assertEquals("YYOO",$actual);
     }
 
     public function test_convertMinutes_given3_shouldReturnYYYO() {
-        $berlinClock = new BerlinClock();
-
-        $actual = $berlinClock->convertMinutes(3);
+        $actual = $this->actConvertMinutes(3);
 
         $this->assertEquals("YYYO",$actual);
     }
 
     public function test_convertMinutes_given4_shouldReturnYYYY() {
-        $berlinClock = new BerlinClock();
-
-        $actual = $berlinClock->convertMinutes(4);
+        $actual = $this->actConvertMinutes(4);
 
         $this->assertEquals("YYYY",$actual);
     }
 
     public function test_convertMinutes_given5_shouldReturnOOOO(){
-        $berlinClock = new BerlinClock();
-
-        $actual = $berlinClock->convertMinutes(5);
+        $actual = $this->actConvertMinutes(5);
 
         $this->assertEquals("OOOO", $actual);
     }
 
     public function test_convertMinutes_given6_shouldReturnYOOO() {
-        $berlinClock = new BerlinClock();
-
-        $actual = $berlinClock->convertMinutes(6);
+        $actual = $this->actConvertMinutes(6);
 
         $this->assertEquals("YOOO", $actual);
+    }
+
+    private function actConvertMinutes(int $minutes): string
+    {
+        return $this->berlinClock->convertMinutes($minutes);
     }
 
 }
