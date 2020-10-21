@@ -11,8 +11,7 @@ class BerlinClockTest extends TestCase
 
     private $berlinClock;
 
-    protected function setUp(): void
-    {
+    protected function setUp(): void{
         parent::setUp();
         $this->berlinClock = new BerlinClock();
     }
@@ -59,9 +58,19 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("YOOO", $actual);
     }
 
-    private function actConvertMinutes(int $minutes): string
-    {
+    private function actConvertMinutes(int $minutes): string{
         return $this->berlinClock->convertMinutes($minutes);
+    }
+
+
+    public function test_convert5Minutes_given3_shouldReturnOOOOOOOOOOO() {
+        $actual = $this->actConvert5Minutes(3);
+
+        $this->assertEquals("OOOOOOOOOOO", $actual);
+    }
+
+    private function actConvert5Minutes(int $minutes): string{
+        return $this->berlinClock->convert5Minutes($minutes);
     }
 
 }

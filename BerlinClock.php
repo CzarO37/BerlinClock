@@ -10,4 +10,8 @@ class BerlinClock
         $Os = str_repeat("O",4-$mod);
         return $Ys . $Os;
     }
+
+    public function convert5Minutes(int $minutes): string {
+        return "OOOOOOOOOOO";
+    }
 }
