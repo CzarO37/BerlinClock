@@ -55,4 +55,13 @@ class BerlinClockTest extends TestCase
 
         $this->assertEquals("OOOO", $actual);
     }
+
+    public function test_convertMinutes_given6_shouldReturnYOOO() {
+        $berlinClock = new BerlinClock();
+
+        $actual = $berlinClock->convertMinutes(6);
+
+        $this->assertEquals("YOOO", $actual);
+    }
+
 }
