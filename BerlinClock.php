@@ -47,12 +47,13 @@ class BerlinClock
         return ($seconds%2 === 0) ? "O" : "R";
     }
 
-    public function convertTime(string $time): string {
-        $res = $this->convertSeconds(date('s', strtotime($time))) . "\n";
-        $res = $res . $this->convert5Hours(date('H', strtotime($time))) . "\n";
-        $res = $res . $this->convertHours(date('H', strtotime($time))) . "\n";
-        $res = $res . $this->convert5Minutes(date('i', strtotime($time))) . "\n";
-        $res = $res . $this->convertMinutes(date('i', strtotime($time))) . "\n";
+    public function convertTime(string $timeString): string {
+        $time = strtotime($timeString);
+        $res = $this->convertSeconds(date('s', $time)) . "\n";
+        $res = $res . $this->convert5Hours(date('H', $time)) . "\n";
+        $res = $res . $this->convertHours(date('H', $time)) . "\n";
+        $res = $res . $this->convert5Minutes(date('i', $time)) . "\n";
+        $res = $res . $this->convertMinutes(date('i', $time)) . "\n";
         return $res;
     }
 }
