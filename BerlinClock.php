@@ -42,4 +42,8 @@ class BerlinClock
         $Os = str_repeat("O",4-$numberLights);
         return $Rs . $Os;
     }
+
+    public function convertSeconds(int $seconds): string {
+        return "O";
+    }
 }
