@@ -122,6 +122,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("OOOO", $actual);
     }
 
+    public function test_convert5Hours_given17_shouldReturnRRRO() {
+        $actual = $this->actConvert5Hours(17);
+
+        $this->assertEquals("RRRO", $actual);
+    }
+
     private function actConvert5Hours(int $hours): string{
         return $this->berlinClock->convert5Hours($hours);
     }
