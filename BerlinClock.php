@@ -28,4 +28,11 @@ class BerlinClock
         }
         return $res;
     }
+
+    public function convertHours(int $hours): string {
+        $mod = $hours%5;
+        $Rs = str_repeat("R",$mod);
+        $Os = str_repeat("O",4-$mod);
+        return $Rs . $Os;
+    }
 }
