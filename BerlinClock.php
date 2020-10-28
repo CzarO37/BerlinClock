@@ -46,4 +46,13 @@ class BerlinClock
     public function convertSeconds(int $seconds): string {
         return ($seconds%2 === 0) ? "O" : "R";
     }
+
+    public function convertTime(string $time): string {
+        $res = $this->convertSeconds(date('s', strtotime($time))) . "\n";
+        $res = $res . $this->convert5Hours(date('H', strtotime($time))) . "\n";
+        $res = $res . $this->convertHours(date('H', strtotime($time))) . "\n";
+        $res = $res . $this->convert5Minutes(date('i', strtotime($time))) . "\n";
+        $res = $res . $this->convertMinutes(date('i', strtotime($time))) . "\n";
+        return $res;
+    }
 }

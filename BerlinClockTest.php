@@ -162,4 +162,13 @@ class BerlinClockTest extends TestCase
     private function actConvertSeconds(int $seconds): string{
         return $this->berlinClock->convertSeconds($seconds);
     }
+
+    //Tests for convertTime
+    public function test_convertTime_givenMidnight_shouldReturnAllOff() {
+        $actual = $this->actConvertTime("00:00:00");
+        $this->assertEquals("O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO\n", $actual);
+    }
+    private function actConvertTime(string $time): string{
+        return $this->berlinClock->convertTime($time);
+    }
 }
