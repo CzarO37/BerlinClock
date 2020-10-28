@@ -16,7 +16,11 @@ class BerlinClock
         $res="";
         for ($i=1; $i<=11; $i++) {
             if ($i <= $numberLights) {
-                $res = $res . "Y";
+                if ($i%3 === 0){
+                    $res = $res . "R";
+                } else {
+                    $res = $res . "Y";
+                }
             }
             else {
                 $res = $res . "O";
