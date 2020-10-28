@@ -168,6 +168,12 @@ class BerlinClockTest extends TestCase
         $actual = $this->actConvertTime("00:00:00");
         $this->assertEquals("O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO\n", $actual);
     }
+
+    public function test_convertTime_given23H59m59_shouldReturnAllOn() {
+        $actual = $this->actConvertTime("23:59:59");
+        $this->assertEquals("R\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY\n", $actual);
+    }
+
     private function actConvertTime(string $time): string{
         return $this->berlinClock->convertTime($time);
     }
