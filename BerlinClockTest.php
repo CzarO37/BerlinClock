@@ -16,6 +16,7 @@ class BerlinClockTest extends TestCase
         $this->berlinClock = new BerlinClock();
     }
 
+    //Test for convertMinutes
     public function test_convertMinutes_given0_shouldReturnOOOO() {
         $actual = $this->actConvertMinutes(0);
 
@@ -62,7 +63,7 @@ class BerlinClockTest extends TestCase
         return $this->berlinClock->convertMinutes($minutes);
     }
 
-
+    //Test for convert5Minutes
     public function test_convert5Minutes_given3_shouldReturnOOOOOOOOOOO() {
         $actual = $this->actConvert5Minutes(3);
 
