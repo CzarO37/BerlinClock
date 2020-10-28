@@ -152,6 +152,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("R", $actual);
     }
 
+    public function test_convertSeconds_given37_shouldReturnR() {
+        $actual = $this->actConvertSeconds(37);
+
+        $this->assertEquals("R", $actual);
+    }
+
     private function actConvertSeconds(int $seconds): string{
         return $this->berlinClock->convertSeconds($seconds);
     }
