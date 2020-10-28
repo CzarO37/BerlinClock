@@ -115,4 +115,14 @@ class BerlinClockTest extends TestCase
     private function actConvertHours(int $hours): string{
         return $this->berlinClock->convertHours($hours);
     }
+
+    public function test_convert5Hours_given3_shouldReturnOOOO() {
+        $actual = $this->actConvert5Hours(3);
+
+        $this->assertEquals("OOOO", $actual);
+    }
+
+    private function actConvert5Hours(int $hours): string{
+        return $this->berlinClock->convert5Hours($hours);
+    }
 }

@@ -35,4 +35,11 @@ class BerlinClock
         $Os = str_repeat("O",4-$mod);
         return $Rs . $Os;
     }
+
+    public function convert5Hours(int $hours): string {
+        $numberLights = floor($hours/5);
+        $Rs = str_repeat("R",$numberLights);
+        $Os = str_repeat("O",4-$numberLights);
+        return $Rs . $Os;
+    }
 }
