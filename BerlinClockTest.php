@@ -146,6 +146,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("O", $actual);
     }
 
+    public function test_convertSeconds_given1_shouldReturnR() {
+        $actual =$this->actConvertSeconds(1);
+
+        $this->assertEquals("R", $actual);
+    }
+
     private function actConvertSeconds(int $seconds): string{
         return $this->berlinClock->convertSeconds($seconds);
     }
