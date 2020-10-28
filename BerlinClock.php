@@ -12,6 +12,16 @@ class BerlinClock
     }
 
     public function convert5Minutes(int $minutes): string {
-        return "OOOOOOOOOOO";
+        $numberLights = floor($minutes/5);
+        $res="";
+        for ($i=1; $i<=11; $i++) {
+            if ($i <= $numberLights) {
+                $res = $res . "Y";
+            }
+            else {
+                $res = $res . "O";
+            }
+        }
+        return $res;
     }
 }

@@ -69,6 +69,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("OOOOOOOOOOO", $actual);
     }
 
+    public function test_convert5Minutes_given5_shouldReturnYOOOOOOOOOO() {
+        $actual = $this->actConvert5Minutes(5);
+
+        $this->assertEquals("YOOOOOOOOOO", $actual);
+    }
+
     private function actConvert5Minutes(int $minutes): string{
         return $this->berlinClock->convert5Minutes($minutes);
     }
